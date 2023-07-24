@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Pedro Grama">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Javascript -->
+    <script type='text/javascript' src="script/script.js"></script>
+     <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>PET BH</h1>
+        <button type="button" class="btn btn-primary btn-lg"> <a href="index.html" class="btn btn-primary btn-lg">HOME</a></button>
+        <button type="button" class="btn btn-primary btn-lg"> <a href="cadastro.html" class="btn btn-primary btn-lg">CADASTRO</a></button>
+        <button type="button" class="btn btn-primary btn-lg"> <a href="plano.html" class="btn btn-primary btn-lg">PLANO</a></button>
+    </header>
+<!-- Begin Container -->
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <h3 id="heading">Cadastro Cliente</h3>
+        </div>
+    </div>
+
+    <!-- Row Begins -->
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+
+            <!-- Text -->
+            <p class="col-md-8 col-sm-12 col-xs-12">
+                Preencha os campos abaixo para cadastrar novo cliente.
+            </p>
+
+            <!-- Form Begin -->
+            <form class="go-right col-md-8 col-sm-12 col-xs-12" role="form" action= " " method="post" id="contact_form" data-toggle="validator">
+                <!-- nome completo -->
+                <div class="form-group">
+                    <input name="nome_cliente" id="full_name" placeholder="Nome Completo" class="form-control" type="text" required>
+                    <label for="nome_cliente">Nome Completo</label>
+                </div>
+                <!-- cpf -->
+                <div class="form-group">
+                    <input name="cpf" id="cpf" placeholder="CPF" class="form-control" type="text" autocomplete="off" maxlength="14" onkeyup="mascara_cpf()" required>
+                    <label for="cpf">CPF</label>
+                </div>
+                <!-- nome do pet -->
+                <div class="form-group">
+                    <input name="nome_pet" id="first_name" placeholder="Nome do Pet" class="form-control" type="text" required>
+                    <label for="nome_pet">Nome do Pet</label>
+                </div>
+                <!-- data nascimento -->
+                <div class="form-group">
+                    <input name="data_nasc" id="data_nasc" placeholder="Data de Nascimento" class="form-control" type="date" required>
+                    <label for="data_nasc">Data de Nascimento</label>
+                </div>
+                <!-- email -->
+                <div class="form-group">
+                    <input name="email" id="email" placeholder="Email" class="form-control" type="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <!-- telefone -->
+                <div class="form-group">
+                    <input type="tel" maxlength="15" onkeyup="handlePhone(event)" class="form-control" id="telefone"
+                    placeholder="Telefone" required>
+                    <label for="telefone">Telefone</label>
+                </div>
+                <!-- endereco -->
+                <div class="form-group">
+                    <input name="endereco" id="endereco" placeholder="Endereço" class="form-control" type="text" required>
+                    <label for="endereco">Endereço</label>
+                </div>
+                <!-- bairro -->
+                <div class="form-group">
+                    <input name="bairro" id="bairro" placeholder="Bairro" class="form-control" type="text" required>
+                    <label for="bairro">Bairro</label>
+                </div>
+                <!-- estado -->
+                <div class="form-group">
+                    <select id="estado" class="form-select" required>
+                        <option value="">SELECIONE O ESTADO</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                    <br>
+                    <label for="estado">Estado</label>
+
+                    <div class="form-group">
+                    <button type="reset" class="btn btn-success">Limpar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+                </div>
+            </form>
+            <!-- Form End -->
+
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 hidden-xs">
+            <img id="image" src="imagens/pet_shop.jpg">
+        </div>
+    </div>
+    <!-- Row Ends -->
+
+</div>
+<!-- End Container -->
+<footer>
+    <p>Todos os direitos reservados &copy; 2023 - PET BH</p>
+</footer>
+</body>
+</html>
